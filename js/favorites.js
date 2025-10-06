@@ -30,3 +30,16 @@ export function renderFavorites(favorites = hardcodedFavorites) {
 document.addEventListener('DOMContentLoaded', () => {
     renderFavorites();
 });
+// Function to remove a favorite
+export function removeFavorite(id) {
+    const updated = hardcodedFavorites.filter(book => book.id !== id);
+    renderFavorites(updated);
+    Object.assign(hardcodedFavorites, updated);
+}
+// Event delegation for remove buttons
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-fav')) {
+        const bookId = parseInt(e.target.closest('[data-book-id]').dataset.bookId);
+        removeFavorite(bookId);
+    }
+});
