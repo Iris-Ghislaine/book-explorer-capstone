@@ -4,21 +4,21 @@ let favorites = JSON.parse(localStorage.getItem('favorites')) || [
         id: 1, 
         title: 'They Both Die at the End', 
         author: 'Adam Silvera', 
-        cover: '/img/B_1.jpg', 
+        cover: '/Lab2/img/B_1.jpg', 
         description: 'On the last day of their lives, two teens connect in a world where death is foretold, racing against time to make memories that last forever.' 
     },
     { 
         id: 2, 
         title: 'Lightfall', 
         author: 'Series by Tim Probert', 
-        cover: '/img/B_7.jpg', 
+        cover: '/Lab2/img/B_7.jpg', 
         description: 'A young cave-dwelling mushroom and a brave bat embark on an epic quest through a glowing underground world full of adventure and mystery.' 
     },
     { 
         id: 3, 
         title: 'Together Once More', 
         author: 'Ay riesy Syuhada', 
-        cover: '/img/B_2.jpg', 
+        cover: '/Lab2/img/B_2.jpg', 
         description: 'Separated by fate, two souls reunite in a heartfelt tale of love, loss, and the unbreakable bonds that pull us back to where we belong.' 
     }
 ];
