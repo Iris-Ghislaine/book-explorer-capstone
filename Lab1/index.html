@@ -3,34 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Explorer</title>
+    <title>Booksky</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .favorited .heart-path {
+        fill: currentColor;
+        stroke: none;
+      }
+    </style>
   </head>
   <body>
-    <nav class="bg-blue-600 shadow-md text-white p-4 fixed top-0 w-full z-10">
+    <nav class="bg-emerald-600 shadow-md text-white p-4 fixed top-0 w-full z-10">
       <div class="container mx-auto flex justify-between items-center">
-                    <a href="#" class="flex items-center gap-2 cursor-pointer hover:opacity-80">
+                    <a href="#" class="flex items-center gap-2 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
                 <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
               </svg>
-              <span class="text-xl font-bold text-white">Book Explorer</span>
+              <span class="text-xl font-bold text-white">ᗷ◯◯ＫՏＫႷ</span>
             </a>
  <div class="flex gap-1 sm:gap-2">
-              <a href="/Lab1/index.html" class="px-3 sm:px-4 py-2 rounded-lg transition-colors flex items-center gap-2 text-sm sm:text-base bg-blue-600 text-white">
+              <a href="/Lab1/index.html" class="px-3 sm:px-4 py-2 rounded-lg transition-colors flex items-center gap-2 text-sm sm:text-base text-white font-bold">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
                 </svg>
                 <span class="hidden sm:inline">Home</span>
               </a>
 
-              <a href="/favorites.html" class="px-3 sm:px-4 py-2 rounded-lg transition-colors flex items-center gap-2 text-sm sm:text-base text-white hover:bg-slate-100 hover:text-slate-700">
+              <a href="/favorites.html" class="px-3 sm:px-4 py-2 rounded-lg transition-colors flex items-center gap-2 text-sm sm:text-base text-white hover:bg-slate-100 hover:text-slate-700 font-bold">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
                 </svg>
                 <span class="hidden sm:inline">Favorites</span>
               </a>
 
-              <a href="/about.html" class="px-3 sm:px-4 py-2 rounded-lg transition-colors flex items-center gap-2 text-sm sm:text-base text-white hover:bg-slate-100 hover:text-slate-700">
+              <a href="/about.html" class="px-3 sm:px-4 py-2 rounded-lg transition-colors flex items-center gap-2 text-sm sm:text-base text-white hover:bg-slate-100 hover:text-slate-700 font-bold">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="10"></circle>
                   <path d="M12 16v-4"></path>
@@ -41,125 +50,205 @@
             </div>
       </div>
     </nav>
-    <section class="hero bg-white text-center py-20 mt-16">
-      <div class="container mx-auto">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-        Discover Your Next Great Read
-        </h2>
-        <p class="text-lg mb-6">
-          Browse thousands of books from around the world.
-        </p>
-               <form id="searchForm" class="w-full max-w-2xl mx-auto">
-              <div class="relative">
-                <input
-                  type="text"
-                  id="searchInput"
-                  placeholder="Search for books by title, author, or ISBN..."
-                  class="w-full px-4 py-3 pl-12 pr-4 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <path d="m21 21-4.3-4.3"></path>
-                </svg>
-                <button
-                  type="submit"
-                  id="searchButton"
-                  class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:bg-slate-300 disabled:cursor-not-allowed text-sm font-medium"
-                >
-                  Search
-                </button>
-              </div>
-            </form>
+    <section class="hero py-12 sm:py-16 lg:py-20 mt-16 flex items-center min-h-screen lg:min-h-[80vh]">
+      <div class="container mx-auto flex flex-col py-16 lg:flex-row items-center lg:items-start gap-6 sm:gap-8 px-4">
+        <div class="flex-1 lg:w-1/2 text-center lg:text-left order-2 lg:order-1">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 leading-tight">
+            Discover Your <span class="text-orange-600">Next Great Read</span>
+          </h2>
+          <p class="text-base sm:text-lg mb-6 px-4 lg:px-0">
+            Browse thousands of books from around the world.
+          </p>
+          <a href="#books-grid" class="inline-block bg-emerald-600 text-white px-6 py-3 rounded-full hover:bg-emerald-500 transition-colors mb-6 text-sm sm:text-base">
+            View More
+          </a>
+          <form id="searchForm" class="w-full max-w-md sm:max-w-xl mx-auto lg:mx-0">
+            <div class="relative">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for books by title, author"
+                class="w-full px-4 py-3 pl-12 pr-4 rounded-full border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm sm:text-base"
+              />
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </svg>
+              <button
+                type="submit"
+                id="searchButton"
+                class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-orange-600 text-white rounded-full hover:bg-orange-500 transition-colors disabled:cursor-not-allowed text-xs sm:text-sm font-medium"
+              >
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="flex-1 lg:w-1/2 order-1 lg:order-2 mb-6 lg:mb-0">
+          <img src="/img/landingImage.png" alt="Hero Banner" class="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-lg mx-auto lg:mx-0" />
+        </div>
       </div>
     </section>
     <section
-      class="books-grid container mx-auto py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="books-grid"
+      class="books-grid container mx-auto py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="books-grid"
     >
       <!-- Placeholder cards -->
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <img src="/img/B_1.jpg" alt="Book Cover" class="w-full h-50 object-cover rounded" />
-        <h3 class="text-xl font-semibold mt-4">They Both Die at the End</h3>
-        <p class="text-gray-600">Adam Silvera</p>
-        <button
-          class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          Add to Favorites
-        </button>
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 group relative overflow-hidden">
+        <div class="relative">
+          <img src="/img/B_1.jpg" alt="Book Cover" class="w-full h-64 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" />
+          <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon text-gray-500 hover:text-red-500 transition-colors cursor-pointer">
+              <path class="heart-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="mt-4">
+          <h3 class="text-xl font-semibold">They Both Die at the End</h3>
+          <p class="text-gray-600 mt-1">Adam Silvera</p>
+          <button
+            class="mt-4 bg-orange-600 text-white px-4 rounded-full py-2 hover:bg-orange-500 transition-colors w-full"
+          >
+            Add to Favorites
+          </button>
+        </div>
       </div>
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <img src="/img/B_7.jpg" alt="Book Cover" class="w-full h-50 object-cover rounded" />
-        <h3 class="text-xl font-semibold mt-4">Lightfall</h3>
-        <p class="text-gray-600">Series by Tim Probert</p>
-        <button
-          class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          Add to Favorites
-        </button>
+      <div class="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow duration-300 group relative overflow-hidden">
+        <div class="relative">
+          <img src="/img/B_7.jpg" alt="Book Cover" class="w-full h-64 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" />
+          <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon text-gray-500 hover:text-red-500 transition-colors cursor-pointer">
+              <path class="heart-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="mt-4">
+          <h3 class="text-xl font-semibold">Lightfall</h3>
+          <p class="text-gray-600 mt-1">Series by Tim Probert</p>
+          <button
+            class="mt-4 bg-orange-600 text-white px-4 rounded-full py-2 hover:bg-orange-500 transition-colors w-full"
+          >
+            Add to Favorites
+          </button>
+        </div>
       </div>
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <img src="/img/B_2.jpg" alt="Book Cover" class="w-full h-50 object-cover rounded" />
-        <h3 class="text-xl font-semibold mt-4">Together Once More</h3>
-        <p class="text-gray-600">Ay riesy Syuhada</p>
-        <button
-          class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          Add to Favorites
-        </button>
+      <div class="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow duration-300 group relative overflow-hidden">
+        <div class="relative">
+          <img src="/img/B_2.jpg" alt="Book Cover" class="w-full h-64 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" />
+          <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon text-gray-500 hover:text-red-500 transition-colors cursor-pointer">
+              <path class="heart-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="mt-4">
+          <h3 class="text-xl font-semibold">Together Once More</h3>
+          <p class="text-gray-600 mt-1">Ay riesy Syuhada</p>
+          <button
+            class="mt-4 bg-orange-600 text-white px-4 rounded-full py-2 hover:bg-orange-500 transition-colors w-full"
+          >
+            Add to Favorites
+          </button>
+        </div>
       </div>
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <img src="/img/B_5.jpg" alt="Book Cover" class="w-full h-50 object-cover rounded" />
-        <h3 class="text-xl font-semibold mt-4">The New Girl</h3>
-        <p class="text-gray-600">Cassandra Calin</p>
-        <button
-          class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          Add to Favorites
-        </button>
+      <div class="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow duration-300 group relative overflow-hidden">
+        <div class="relative">
+          <img src="/img/B_5.jpg" alt="Book Cover" class="w-full h-64 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" />
+          <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon text-gray-500 hover:text-red-500 transition-colors cursor-pointer">
+              <path class="heart-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="mt-4">
+          <h3 class="text-xl font-semibold">The New Girl</h3>
+          <p class="text-gray-600 mt-1">Cassandra Calin</p>
+          <button
+            class="mt-4 bg-orange-600 text-white px-4 rounded-full py-2 hover:bg-orange-500 transition-colors w-full"
+          >
+            Add to Favorites
+          </button>
+        </div>
       </div>
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <img src="/img/B_3.jpg" alt="Book Cover" class="w-full h-50 object-cover rounded" />
-        <h3 class="text-xl font-semibold mt-4">The Shattered Vows</h3>
-        <p class="text-gray-600">Lily Adellea</p>
-        <button
-          class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          Add to Favorites
-        </button>
+      <div class="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow duration-300 group relative overflow-hidden">
+        <div class="relative">
+          <img src="/img/B_3.jpg" alt="Book Cover" class="w-full h-64 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" />
+          <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon text-gray-500 hover:text-red-500 transition-colors cursor-pointer">
+              <path class="heart-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="mt-4">
+          <h3 class="text-xl font-semibold">The Shattered Vows</h3>
+          <p class="text-gray-600 mt-1">Lily Adellea</p>
+          <button
+            class="mt-4 bg-orange-600 text-white px-4 rounded-full py-2 hover:bg-orange-500 transition-colors w-full"
+          >
+            Add to Favorites
+          </button>
+        </div>
       </div>
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <img src="/img/B_6.jpg" alt="Book Cover" class="w-full h-50 object-cover rounded" />
-        <h3 class="text-xl font-semibold mt-4">The Sun Will Come Out</h3>
-        <p class="text-gray-600">Joanne Levy</p>
-        <button
-          class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          Add to Favorites
-        </button>
+      <div class="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow duration-300 group relative overflow-hidden">
+        <div class="relative">
+          <img src="/img/B_6.jpg" alt="Book Cover" class="w-full h-64 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" />
+          <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon text-gray-500 hover:text-red-500 transition-colors cursor-pointer">
+              <path class="heart-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="mt-4">
+          <h3 class="text-xl font-semibold">The Sun Will Come Out</h3>
+          <p class="text-gray-600 mt-1">Joanne Levy</p>
+          <button
+            class="mt-4 bg-orange-600 text-white px-4 rounded-full py-2 hover:bg-orange-500 transition-colors w-full"
+          >
+            Add to Favorites
+          </button>
+        </div>
       </div>
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <img src="/img/B_8.jpg" alt="Book Cover" class="w-full h-50 object-cover rounded" />
-        <h3 class="text-xl font-semibold mt-4">Her Blue Sky</h3>
-        <p class="text-gray-600">Mari Okada, Naohito Takahashi</p>
-        <button
-          class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          Add to Favorites
-        </button>
+      <div class="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow duration-300 group relative overflow-hidden">
+        <div class="relative">
+          <img src="/img/B_8.jpg" alt="Book Cover" class="w-full h-64 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" />
+          <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon text-gray-500 hover:text-red-500 transition-colors cursor-pointer">
+              <path class="heart-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="mt-4">
+          <h3 class="text-xl font-semibold">Her Blue Sky</h3>
+          <p class="text-gray-600 mt-1">Mari Okada, Naohito Takahashi</p>
+          <button
+            class="mt-4 bg-orange-600 text-white px-4 rounded-full py-2 hover:bg-orange-500 transition-colors w-full"
+          >
+            Add to Favorites
+          </button>
+        </div>
       </div>
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <img src="/img/B_7.jpg" alt="Book Cover" class="w-full h-50 object-cover rounded" />
-        <h3 class="text-xl font-semibold mt-4">Lightfall</h3>
-        <p class="text-gray-600">Tim Probert</p>
-        <button
-          class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          Add to Favorites
-        </button>
+      <div class="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow duration-300 group relative overflow-hidden">
+        <div class="relative">
+          <img src="/img/B_7.jpg" alt="Book Cover" class="w-full h-64 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" />
+          <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon text-gray-500 hover:text-red-500 transition-colors cursor-pointer">
+              <path class="heart-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="mt-4">
+          <h3 class="text-xl font-semibold">Lightfall</h3>
+          <p class="text-gray-600 mt-1">Tim Probert</p>
+          <button
+            class="mt-4 bg-orange-600 text-white px-4 rounded-full py-2 hover:bg-orange-500 transition-colors w-full"
+          >
+            Add to Favorites
+          </button>
+        </div>
       </div>
     </section>
 
-    <footer class="bg-blue-600 text-white text-center py-4 mt-8">
-      <p>&copy; 2025 Book Explorer. All rights reserved.</p>
+    <footer class="bg-emerald-600 text-white text-center py-4 mt-8">
+      <p>&copy; 2025 ᗷ◯◯ＫՏＫႷ</p>
     </footer>
   </body>
 </html>
