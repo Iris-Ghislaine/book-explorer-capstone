@@ -29,7 +29,6 @@ export function renderFavorites() { // No param—uses global favorites
             <img src="${book.cover}" alt="${book.title} Cover" class="w-full h-50 object-cover rounded" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x400?text=No+Cover'">
             <h3 class="text-xl font-semibold mt-4">${book.title}</h3>
             <p class="text-gray-600">${book.author}</p>
-            <p class="text-sm text-gray-500 mt-2 line-clamp-3">${book.description}</p>
             <button class="remove-fav mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">
                 Remove Favorite
             </button>

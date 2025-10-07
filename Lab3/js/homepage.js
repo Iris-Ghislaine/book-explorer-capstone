@@ -29,7 +29,6 @@ export function renderHomepageBooks(books = []) {
                 <img src="${book.cover}" alt="${book.title} Cover" class="w-full h-50 object-cover rounded" onerror="this.onerror=null; this.src='${placeholderSrc}'">
                 <h3 class="text-xl font-semibold mt-4">${book.title}</h3>
                 <p class="text-gray-600">${book.author}</p>
-                <p class="text-sm text-gray-500 mt-2 line-clamp-3">${book.description}</p>
                 <button class="add-fav mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
                     Add to Favorites
                 </button>
@@ -101,5 +100,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     currentBooks = books;
     renderHomepageBooks(books);
-    initSearch(); // Wire search
+    initSearch(); 
 });
