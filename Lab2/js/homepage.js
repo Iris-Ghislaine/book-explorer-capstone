@@ -76,7 +76,7 @@ export function renderHomepageBooks(books = homepageBooks) {
   console.log("Rendering homepage books..."); // Debug
   const grid = document.querySelector("#books-grid"); // Fixed: Use ID
   console.log("Grid found?", grid); // Debug: Should not be null
-  if (!grid) return; // if empty we stop by here
+  if (!grid) return; // if empty, we stop by here
 
   grid.innerHTML = books
     .map(
