@@ -29,7 +29,6 @@ export function renderFavorites() { // No param—uses global favorites
     console.log('Rendering favorites...'); // Debug
     const list = document.getElementById('favorites-list');
     const emptyState = document.getElementById('empty-state');
-    console.log('List/empty found?', list, emptyState); // Debug
     
     if (favorites.length === 0) {
         list.innerHTML = '';
@@ -56,7 +55,6 @@ export function removeFavorite(id) {
     console.log('Removing ID:', id); // Debug
     favorites = favorites.filter(book => book.id !== id);
     localStorage.setItem('favorites', JSON.stringify(favorites));
-    console.log('Updated favorites:', favorites); // Debug
     renderFavorites();
 }
 
