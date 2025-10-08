@@ -109,7 +109,7 @@ export function renderHomepageBooks(books = homepageBooks) {
           <div class="relative">
             <img src="${book.cover}" alt="${book.title} Cover" class="w-full h-64 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" />
             <button class="absolute top-3 right-3 p-2 bg-white/80 rounded-full hover:bg-white transition-colors opacity-0 group-hover:opacity-100">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon text-gray-500 hover:text-red-500 transition-colors cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon text-orange-600 hover:text-orange-500 transition-colors cursor-pointer">
                 <path class="heart-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
               </svg>
             </button>
@@ -137,21 +137,65 @@ export function renderHomepageBooks(books = homepageBooks) {
 }
 
 // Event delegation for add buttons and heart icons
+// document.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("add-fav")) {
+//     console.log("Add button clicked!"); // Debug
+//     const card = e.target.closest("[data-book-id]");
+//     const bookId = parseInt(card.dataset.bookId);
+//     const book = homepageBooks.find((b) => b.id === bookId);
+//     if (book) {
+//       if (!favorites.some((fav) => fav.id === book.id)) {
+//         addToFavorites(book);
+//         card.classList.add('favorited');
+//       }
+//     } else {
+//       console.log("Book not found for ID:", bookId); // Debug
+//     }
+//   } else if (e.target.matches('.heart-icon, .heart-icon *')) {
+//     e.stopPropagation();
+//     console.log("Heart icon clicked!"); // Debug
+//     const heartIcon = e.target.closest('.heart-icon');
+//     const card = heartIcon.closest('[data-book-id]');
+//     const bookId = parseInt(card.dataset.bookId);
+//     const book = homepageBooks.find((b) => b.id === bookId);
+//     if (book) {
+//       card.classList.toggle('favorited');
+//       if (card.classList.contains('favorited')) {
+//         if (!favorites.some((fav) => fav.id === book.id)) {
+//           addToFavorites(book);
+//         }
+//       } else {
+//         removeFromFavorites(book);
+//       }
+//     } else {
+//       console.log("Book not found for ID:", bookId); // Debug
+//     }
+//   }
+// });
+// Event delegation for add buttons and heart icons (fixed)
 document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("add-fav")) {
+  // Handle Add to Favorites button
+  const addButton = e.target.closest('.add-fav');
+  if (addButton) {
     console.log("Add button clicked!"); // Debug
-    const card = e.target.closest("[data-book-id]");
+    const card = addButton.closest("[data-book-id]");
     const bookId = parseInt(card.dataset.bookId);
     const book = homepageBooks.find((b) => b.id === bookId);
     if (book) {
       if (!favorites.some((fav) => fav.id === book.id)) {
         addToFavorites(book);
         card.classList.add('favorited');
+      } else {
+        alert(`${book.title} is already in your favorites!`);
       }
     } else {
-      console.log("Book not found for ID:", bookId); // Debug
+      console.log("Book not found for ID:", bookId);
     }
-  } else if (e.target.matches('.heart-icon, .heart-icon *')) {
+    return; // stop further handling
+  }
+
+  // Handle Heart icon clicks
+  if (e.target.closest('.heart-icon')) {
     e.stopPropagation();
     console.log("Heart icon clicked!"); // Debug
     const heartIcon = e.target.closest('.heart-icon');
@@ -168,11 +212,10 @@ document.addEventListener("click", (e) => {
         removeFromFavorites(book);
       }
     } else {
-      console.log("Book not found for ID:", bookId); // Debug
+      console.log("Book not found for ID:", bookId);
     }
   }
 });
-
 // Initial render
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded, rendering..."); // Debug
