@@ -135,43 +135,6 @@ export function renderHomepageBooks(books = homepageBooks) {
     }
   });
 }
-
-// Event delegation for add buttons and heart icons
-// document.addEventListener("click", (e) => {
-//   if (e.target.classList.contains("add-fav")) {
-//     console.log("Add button clicked!"); // Debug
-//     const card = e.target.closest("[data-book-id]");
-//     const bookId = parseInt(card.dataset.bookId);
-//     const book = homepageBooks.find((b) => b.id === bookId);
-//     if (book) {
-//       if (!favorites.some((fav) => fav.id === book.id)) {
-//         addToFavorites(book);
-//         card.classList.add('favorited');
-//       }
-//     } else {
-//       console.log("Book not found for ID:", bookId); // Debug
-//     }
-//   } else if (e.target.matches('.heart-icon, .heart-icon *')) {
-//     e.stopPropagation();
-//     console.log("Heart icon clicked!"); // Debug
-//     const heartIcon = e.target.closest('.heart-icon');
-//     const card = heartIcon.closest('[data-book-id]');
-//     const bookId = parseInt(card.dataset.bookId);
-//     const book = homepageBooks.find((b) => b.id === bookId);
-//     if (book) {
-//       card.classList.toggle('favorited');
-//       if (card.classList.contains('favorited')) {
-//         if (!favorites.some((fav) => fav.id === book.id)) {
-//           addToFavorites(book);
-//         }
-//       } else {
-//         removeFromFavorites(book);
-//       }
-//     } else {
-//       console.log("Book not found for ID:", bookId); // Debug
-//     }
-//   }
-// });
 // Event delegation for add buttons and heart icons (fixed)
 document.addEventListener("click", (e) => {
   // Handle Add to Favorites button
