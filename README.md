@@ -44,6 +44,18 @@ This project was completed as part of **Responsive & Interactive Web App Develop
 - Interactive **favorite button** (styled with heart icons)
 - Simple and elegant **footer**
 
+  ## Screenshots
+
+### Homepage
+<img width="1885" height="886" alt="image" src="https://github.com/user-attachments/assets/ced72ec0-a642-431b-a9bd-26113728bd2b" />
+
+### Book Grid Section
+<img width="1894" height="880" alt="image" src="https://github.com/user-attachments/assets/ecf0d807-34d4-462c-bc19-12bbcde1beff" />
+
+### Mobile View
+<img width="473" height="779" alt="image" src="https://github.com/user-attachments/assets/52795cf0-4656-4db9-8cdb-c155035b89b1" />
+<img width="473" height="775" alt="image" src="https://github.com/user-attachments/assets/4358980b-00b6-4271-96b2-1333c572d848" />
+
 ## Project Structure
 Lab1/
 ├── index.html # Homepage (Main landing page)
