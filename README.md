@@ -48,7 +48,7 @@ In this lab, the focus was on **DOM manipulation**, **modular JavaScript**, and 
 ### Local Storage View
 <img width="1790" height="767" alt="image" src="https://github.com/user-attachments/assets/a98a9a52-7dc3-42d2-9b3f-87ec3b30348a" />
 
-## ⚙️ Technologies Used
+## Technologies Used
 - **HTML5**
 - **CSS3 (Tailwind CSS for styling consistency)**
 - **Vanilla JavaScript (ES6 Modules)**
@@ -65,23 +65,15 @@ In this lab, the focus was on **DOM manipulation**, **modular JavaScript**, and 
 ## Project Structure
 
 Lab2/
-│
-├── index.html # Homepage
-├── favorites.html # Favorites page
-│
-├── js/
-│ ├── homepage.js # Homepage interactivity
-│ └── favorites.js # Favorites logic & storage
-│
-├── img/ # Book covers & icons
-│ ├── B_1.jpg
-│ ├── B_2.jpg
-│ ├── B_3.jpg
-│ ├── B_5.jpg
-│ ├── B_6.jpg
-│ ├── B_7.jpg
-│ ├── B_8.jpg
-│ └── favoriteImage.png
+>│
+>├── index.html # Homepage
+>├── favorites.html # Favorites page
+>│
+>├── js/
+>│ ├── homepage.js # Homepage interactivity
+>│ └── favorites.js # Favorites logic & storage
+>└── img/ # all book covers
+
 
 ##  How to Run the Project
 1. Open `index.html` in your browser.  
