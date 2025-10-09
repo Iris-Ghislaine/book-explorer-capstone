@@ -43,7 +43,6 @@ In this lab, the focus was on **fetching real book data**, **async/await**, and 
 <img width="1890" height="886" alt="image" src="https://github.com/user-attachments/assets/443fb4c8-f65b-4aa0-a899-dfc4d2022e41" />
 
 ### Favorites Page
-<img width="1892" height="870" alt="Favorites Page" src="https://github.com/user-attachments/assets/favorites-lab3.png" />
 <img width="1880" height="876" alt="image" src="https://github.com/user-attachments/assets/fd0cc70c-03d8-4802-90ac-0e70f71d60af" />
 
 ### Local Storage View
