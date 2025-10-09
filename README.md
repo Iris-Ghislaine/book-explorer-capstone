@@ -1,146 +1,53 @@
-# Booksky — Lab 2: DOM Interactivity & JavaScript Modules
+# Booksky — Book Explorer Web App
 
 ## Project Overview
-**Booksky** continues to evolve into a functional **Book Explorer Web App**, now enhanced with **JavaScript interactivity**.  
-In this lab, the focus was on **DOM manipulation**, **modular JavaScript**, and **data persistence** using the browser’s `localStorage`.
+**Booksky** is a dynamic **Book Explorer Web App** that allows users to **discover, search, and manage favorite books**.  
+The project evolves through multiple labs to integrate **HTML, CSS, JavaScript, DOM interactivity, API integration, and data persistence**.
 
 ---
 
-## Lab Objectives
-**Lab 2:** DOM Interactivity & JavaScript Modules  
-**Scenario:** Extend the Book Explorer web app to make it interactive — allowing users to add and remove favorite books dynamically.
-
-### Exercises Completed
-#### Exercise 2.1 — Homepage Interactivity
-- Added interactive **“Add to Favorites”** buttons for each book card.  
-- Integrated **heart icons** that visually represent liked items.  
-- Used `localStorage` to persist user selections even after page refresh.
-
-#### Exercise 2.2 — Favorites Page
-- Created a separate **Favorites Page (`favorites.html`)**.  
-- Dynamically displays all books saved as favorites.  
-- Allows users to **remove** books from favorites in real time.  
-- Handles empty states gracefully (shows a “No favorites yet...” message).
-
-#### Exercise 2.3 — JavaScript Modules
-- Implemented ES6 module structure for better organization:
-  - `homepage.js`: Handles rendering and favorite-book logic.
-  - `favorites.js`: Manages favorite books list and persistence.
-- Shared state managed efficiently across modules.
+## Features Overview
+- **Dynamic Homepage:** Browse trending books and search by title.  
+- **Favorites Management:** Add and remove favorite books with **localStorage persistence**.  
+- **API Integration:** Fetch real-time data using the **Open Library API**.  
+- **Responsive UI:** Works seamlessly across desktops, tablets, and mobile screens.  
+- **Interactive Experience:** Smooth DOM updates, loading states, and empty state handling.
 
 ---
-# Booksky — Lab 3: Async JavaScript & API Integration
 
-## Project Overview
-**Booksky** continues to evolve into a functional **Book Explorer Web App**, now enhanced with **API integration** and **asynchronous JavaScript**.  
-In this lab, the focus was on **fetching real book data**, **async/await**, and **dynamic UI updates**.
+## Lab Progression
 
-## Lab Objectives
-**Lab 3:** Async JavaScript & API Integration  
-**Scenario:** Extend the Book Explorer web app to fetch real book data from the **Open Library API**, dynamically render it, and allow favorites management with persistence.
+### Lab 1 — HTML & CSS Structure
+- Set up **static homepage and favorites page**.  
+- Designed **book cards, navigation bar, and grid layout** using Tailwind CSS.  
+- Established **basic page structure and assets management**.
 
-### Exercises Completed
-#### Exercise 3.1 — API Module
-- Created `fetchBooks.js` module to fetch books using **fetch** and **async/await**.  
-- Functions implemented:  
-  - `fetchBooks(query, limit)`: Search books by title.  
-  - `fetchTrendingBooks(subject, limit)`: Get trending books by subject.  
-- Normalized API responses to return `id`, `title`, `author`, and `cover` for each book.
+### Lab 2 — DOM Interactivity & JavaScript Modules
+- Added **interactive Add to Favorites buttons**.  
+- Implemented **favorites page** that dynamically updates in real time.  
+- Used **ES6 modules** to organize JavaScript:
+  - `homepage.js` for rendering and favorites logic.
+  - `favorites.js` for favorites management and persistence.  
+- Stored user preferences in **localStorage**.
 
-#### Exercise 3.2 — Populate Homepage
-- Dynamically rendered books on homepage grid with cover, title, author, and **“Add to Favorites”** buttons.  
-- Implemented **fallback image** for books without covers.  
-- Maintained global state (`currentBooks`) to track fetched books for favorites functionality.
-
-#### Exercise 3.3 — Search Functionality
-- Added search bar to fetch books by user query.  
-- On submit, `fetchBooks(query)` is called and homepage grid updates in real time.  
-- Included **loading spinner** and **empty state messages** for better UX.
-
-#### Exercise 3.4 — Favorites Management
-- Users can add books to favorites from homepage.  
-- Favorites are stored in **localStorage** and displayed on `favorites.html`.  
-- Books can be removed dynamically with immediate UI updates.  
-- Empty favorites list shows: *“No favorites yet. Add some from the homepage!”*
-
-## Screenshots
-
-### Homepage
-<img width="1885" height="874" alt="image" src="https://github.com/user-attachments/assets/9c36b103-028e-4758-ab0c-ef0fedc23982" />
-
-<img width="1890" height="884" alt="image" src="https://github.com/user-attachments/assets/a8a525cc-b368-42ad-8412-58163cf26243" />
-
-### Favorites Page
-<img width="1892" height="870" alt="image" src="https://github.com/user-attachments/assets/9a133b59-094c-46ac-945d-853eb1a86854" />
-
-<img width="1888" height="872" alt="image" src="https://github.com/user-attachments/assets/3ab7c4aa-e584-49b9-8e45-fe32463d99b0" />
-
-<img width="1888" height="883" alt="image" src="https://github.com/user-attachments/assets/dd37696f-2d0f-4cbd-aa78-ba6152106b88" />
-
-
-### Local Storage View
-<img width="1790" height="767" alt="image" src="https://github.com/user-attachments/assets/a98a9a52-7dc3-42d2-9b3f-87ec3b30348a" />
-<img width="1889" height="884" alt="image" src="https://github.com/user-attachments/assets/ea26a909-4921-4583-824f-85f4e87ed693" />
-<img width="1887" height="885" alt="image" src="https://github.com/user-attachments/assets/dd194277-8c19-4c72-8266-609469a8c926" />
-
-### Search Results
-<img width="1741" height="494" alt="image" src="https://github.com/user-attachments/assets/33a29557-e58a-4e16-8adf-d086e3cef0c8" />
-<img width="1890" height="886" alt="image" src="https://github.com/user-attachments/assets/443fb4c8-f65b-4aa0-a899-dfc4d2022e41" />
-
-### Favorites Page
-<img width="1880" height="876" alt="image" src="https://github.com/user-attachments/assets/fd0cc70c-03d8-4802-90ac-0e70f71d60af" />
-
-### Local Storage View
-<img width="1793" height="726" alt="image" src="https://github.com/user-attachments/assets/01e4cb55-083d-4c51-b450-747bcb3e7bd9" />
+### Lab 3 — Async JavaScript & API Integration
+- Integrated **Open Library API** to fetch real book data.  
+- Implemented **async/await** for asynchronous requests.  
+- Added **search functionality** with real-time results.  
+- Maintained dynamic **favorites management** with API data.  
+- Enhanced user experience with **loading spinners** and **empty state messages**.
 
 ## Technologies Used
 - **HTML5**
-- **CSS3 (Tailwind CSS for styling consistency)**
-- **Vanilla JavaScript (ES6 Modules)**
-- **Local Storage API**
-  
-## Key Features
-- Dynamic **book card rendering**
-- **Add / Remove Favorites** functionality
-- Persistent data storage using `localStorage`
-- **Modular JavaScript** with import/export
-- Instant **DOM updates** without page reload
-- **Vanilla JavaScript (ES6 Modules + Async/Await)**
+- **CSS3 (Tailwind CSS)**
+- **Vanilla JavaScript (ES6 Modules & Async/Await)**
 - **Local Storage API**
 - **Open Library API**
 
-## Key Features
-- Dynamic **book fetching** from API
-- Async **fetch + await** integration
-- **Add / Remove Favorites** functionality
-- Persistent favorites via `localStorage`
-- Loading and empty states for **better UX**
-- **Responsive UI** compatible with multiple screen sizes
 
 ## Project Structure
 
-Lab2/
->│
->├── index.html # Homepage
->├── favorites.html # Favorites page
->│
->├── js/
->│ ├── homepage.js # Homepage interactivity
->│ └── favorites.js # Favorites logic & storage
->└── img/ # all book covers
-
-
-##  How to Run the Project
-1. Open `index.html` in your browser.  
-2. Click **“Add to Favorites”** on any book.  
-3. Navigate to `favorites.html` to view your saved books.  
-4. Remove favorites dynamically using the remove button.  
-5. Refresh the page — your data persists via `localStorage`.
-
-## Status
-**Project Completed** — All Lab 2 objectives successfully implemented.
-
-Lab3/
+Booksky/
 >│
 >├── index.html # Homepage
 >├── favorites.html # Favorites page
@@ -148,20 +55,43 @@ Lab3/
 >│
 >├── js/
 >│ ├── fetchBooks.js # API module
->│ ├── homepage.js # Homepage rendering & search logic
->│ └── favorites.js # Favorites page rendering & persistence
+>│ ├── homepage.js # Homepage logic & search
+>│ └── favorites.js # Favorites page logic & persistence
 >│
->└── img/ # background images
-
----
+>└── img/ # Book covers and fallback images
 
 ## How to Run the Project
-1. Open `index.html` in your browser.  
-2. Browse trending books or search by title.  
-3. Click **“Add to Favorites”** on any book.  
-4. Navigate to `favorites.html` to view your saved books.  
-5. Remove favorites dynamically using the remove button.  
-6. Refresh the page — your data persists via `localStorage`.
+1. Clone or download the repository.  
+2. Open `index.html` in your browser.  
+3. Browse trending books or search by title.  
+4. Click **“Add to Favorites”** on any book.  
+5. Navigate to `favorites.html` to view saved books.  
+6. Remove favorites dynamically — data persists via `localStorage`.
+
+## Screenshots
+
+### Homepage
+<img width="1889" height="884" alt="Screenshot 2025-10-09 100655" src="https://github.com/user-attachments/assets/87bfe782-cd4a-4e95-a0c6-3d0b42cfe776" />
+<img width="1897" height="879" alt="Screenshot 2025-10-09 101118" src="https://github.com/user-attachments/assets/41b7847e-9b6a-44c0-8953-2133bf17f5a8" />
+
+
+### Search Results
+<img width="1741" height="494" alt="Screenshot 2025-10-09 100736" src="https://github.com/user-attachments/assets/fd0432ba-06a0-4f73-8ad7-8402c47f78aa" />
+<img width="1890" height="886" alt="Screenshot 2025-10-09 100939" src="https://github.com/user-attachments/assets/b52efa72-a259-468e-96c7-bad96741b6fb" />
+
+### Favorites Page
+<img width="1859" height="795" alt="Screenshot 2025-10-09 091702" src="https://github.com/user-attachments/assets/c177f051-3ff8-4e65-b43c-06ec00cd6721" />
+<img width="1880" height="876" alt="Screenshot 2025-10-09 101339" src="https://github.com/user-attachments/assets/8b83cd7a-b7fe-4108-9157-c190b87d29cd" />
+
+
+### Local Storage View
+<img width="1793" height="726" alt="Screenshot 2025-10-09 101427" src="https://github.com/user-attachments/assets/f279915f-e640-483c-870e-f5cc55c6f843" />
 
 ## Status
-**Project Completed** — All Lab 3 objectives successfully implemented.
+**Project Completed** — All objectives for Labs 1, 2, and 3 successfully implemented.
+
+## Future Enhancements
+- Implement **pagination** for large API results.  
+- Add **user authentication** for personalized book collections.  
+- Include **book details modal** with descriptions and ratings.  
+- Improve **dark mode toggle** and accessibility features.
