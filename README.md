@@ -57,9 +57,10 @@ This project was completed as part of **Responsive & Interactive Web App Develop
 <img width="473" height="775" alt="image" src="https://github.com/user-attachments/assets/4358980b-00b6-4271-96b2-1333c572d848" />
 
 ## Project Structure
-Lab1/
-├── index.html # Homepage (Main landing page)
-└── img/ # Folder containing all book cover images
+
+> Lab1/
+> ├── index.html # Homepage (Main landing page)
+> ├── img/ # Folder containing all book cover images
 
 ## How to Run the Project
 1. Clone or download this repository.  
@@ -67,6 +68,6 @@ Lab1/
 3. Browse through the responsive homepage and grid sections.  
 4. Resize your browser window to test mobile, tablet, and desktop responsiveness.
 
-## 🏁 Status
+## Status
 **Project Completed** — All Lab 1 exercises implemented successfully.
 
