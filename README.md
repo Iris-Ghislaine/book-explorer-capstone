@@ -81,7 +81,8 @@ Booksky/
 
 ### Favorites Page
 <img width="1859" height="795" alt="Screenshot 2025-10-09 091702" src="https://github.com/user-attachments/assets/c177f051-3ff8-4e65-b43c-06ec00cd6721" />
-<img width="1793" height="726" alt="Screenshot 2025-10-09 101427" src="https://github.com/user-attachments/assets/f241e97a-901b-41bc-94ad-752f7226494b" />
+<img width="1880" height="876" alt="Screenshot 2025-10-09 101339" src="https://github.com/user-attachments/assets/8b83cd7a-b7fe-4108-9157-c190b87d29cd" />
+
 
 ### Local Storage View
 <img width="1793" height="726" alt="Screenshot 2025-10-09 101427" src="https://github.com/user-attachments/assets/f279915f-e640-483c-870e-f5cc55c6f843" />
